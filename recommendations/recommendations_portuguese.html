@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+        }
+        .home-button {
+            background-color: transparent;
+            color: #1a73e8;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-right: 20px; /* Added margin for breathing space */
+        }
+        .home-button:hover {
+            background-color: #1a73e8;
+            color: #fff;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 80px 20px 20px; /* Added padding-top for header space */
+            max-width: 1000px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #212121;
+        }
+        .recommendations {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .recommendation-category {
+            margin-bottom: 40px;
+        }
+        .recommendation-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .recommendation-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .recommendation-item:hover img {
+            opacity: 0.9;
+        }
+        .recommendation-item h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #212121;
+        }
+        .recommendation-item p {
+            font-size: 1rem;
+            color: #666;
+            padding: 0 15px;
+        }
+        .recommendation-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .links {
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .links:hover {
+            color: #0056b3;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .container {
+                padding-top: 60px; /* Adjusted padding for header space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <div class="container">
+        <p>Explore these fantastic activities and attractions in Porto, Melgaço, and Monção. Enjoy your time!</p>
+        
+        <div class="recommendations">
+            <div class="recommendation-category">
+                <h1>Porto</h1>
+                <div class="recommendation-item">
+                    <img src="images/ribeira-district.jpg" alt="Ribeira District">
+                    <h3>Ribeira District</h3>
+                    <p>Wander through this historic area along the Douro River, known for its colorful buildings, lively atmosphere, and riverside cafes.</p>
+                    <a href="https://goo.gl/maps/6BRmXg8bu8M2" class="links" target="_blank">MAP & DETAILS</a>
+                </div>
+                <div class="recommendation-item">
+                    <img src="images/livraria-lello.jpg" alt="Livraria Lello">
+                    <h3>Livraria Lello</h3>
+                    <p>Explore one of the most beautiful bookstores in the world, famous for its stunning architecture and intricate wooden staircase.</p>
+                    <a href="https://goo.gl/maps/VrrCSk1t6xv" class="links" target="_blank">MAP & DETAILS</a>
+                </div>
+                <!-- Add more Porto recommendations here -->
+            </div>
+            
+            <div class="recommendation-category">
+                <h1>Melgaço</h1>
+                <div class="recommendation-item">
+                    <img src="images/melgaco-castle.jpg" alt="Melgaço Castle">
+                    <h3>Melgaço Castle</h3>
+                    <p>Explore the medieval castle and its walls, offering panoramic views of the surrounding area.</p>
+                    <a href="https://goo.gl/maps/x2JgQFVfThRr" class="links" target="_blank">MAP & DETAILS</a>
+                </div>
+                <!-- Add more Melgaço recommendations here -->
+            </div>
+            
+            <div class="recommendation-category">
+                <h1>Monção</h1>
+                <div class="recommendation-item">
+                    <img src="images/moncao-castle.jpg" alt="Monção Castle">
+                    <h3>Monção Castle</h3>
+                    <p>Visit the historic castle and its surrounding walls, which offer great views of the town and the Minho River.</p>
+                    <a href="https://goo.gl/maps/y8tJf2uVdALv" class="links" target="_blank">MAP & DETAILS</a>
+                </div>
+                <!-- Add more Monção recommendations here -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

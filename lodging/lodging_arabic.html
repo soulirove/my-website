@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lodging Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+        }
+        .home-button {
+            background-color: transparent;
+            color: #1a73e8;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-right: 20px; /* Added margin for breathing space */
+        }
+        .home-button:hover {
+            background-color: #1a73e8;
+            color: #fff;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 80px 20px 20px; /* Added padding-top for header space */
+            max-width: 1000px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #212121;
+        }
+        .lodging-category {
+            margin-bottom: 40px;
+        }
+        .lodging-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .lodging-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .lodging-item:hover img {
+            opacity: 0.9;
+        }
+        .lodging-item h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #212121;
+        }
+        .lodging-item p {
+            font-size: 1rem;
+            color: #666;
+            padding: 0 15px;
+            margin: 0;
+        }
+        .lodging-item a {
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lodging-item a:hover {
+            color: #0056b3;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .container {
+                padding-top: 60px; /* Adjusted padding for header space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <div class="container">
+        <h1>Lodging Options</h1>
+        <p>Explore a variety of lodging options in Melgaço and Monção to make your stay comfortable and enjoyable.</p>
+
+        <div class="lodging-category">
+            <h2>Melgaço - Hotels</h2>
+            <div class="lodging-item">
+                <img src="images/pousada-melgaco.jpg" alt="Pousada de Melgaço – Monte Prado Hotel & Spa">
+                <h3>Pousada de Melgaço – Monte Prado Hotel & Spa</h3>
+                <p>A luxurious hotel with stunning views, an on-site spa, and a beautiful outdoor pool. It’s set in a scenic area ideal for relaxation and exploring the region.</p>
+                <a href="https://www.pousadademelgaco.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/hotel-bienestar.jpg" alt="Hotel Bienestar Termas de Monção">
+                <h3>Hotel Bienestar Termas de Monção</h3>
+                <p>Located near Melgaço, this hotel offers wellness and thermal treatments, along with comfortable accommodations.</p>
+                <a href="https://www.bienestar.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/hotel-charme.jpg" alt="Hotel de Charme Quinta do Pinheiro">
+                <h3>Hotel de Charme Quinta do Pinheiro</h3>
+                <p>A charming and cozy hotel offering a more intimate and personal experience with beautiful surroundings.</p>
+                <a href="https://www.quintadopinheiro.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/casa-da-insua.jpg" alt="Casa da Insua">
+                <h3>Casa da Insua</h3>
+                <p>A boutique hotel housed in a historical manor, offering a blend of tradition and modern comfort.</p>
+                <a href="https://www.casadainsua.com" target="_blank">Website</a>
+            </div>
+        </div>
+
+        <div class="lodging-category">
+            <h2>Melgaço - Airbnb Options</h2>
+            <div class="lodging-item">
+                <img src="images/quinta-do-silval.jpg" alt="Quinta do Silval - Melgaço">
+                <h3>Quinta do Silval - Melgaço</h3>
+                <p>A rustic farmhouse surrounded by vineyards, ideal for a peaceful getaway with beautiful views and outdoor space.</p>
+                <a href="https://www.airbnb.com/quinta-do-silval" target="_blank">Link</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/casa-da-avo.jpg" alt="Casa da Avó">
+                <h3>Casa da Avó</h3>
+                <p>A charming, traditional Portuguese house with modern amenities, located in a quiet area near Melgaço.</p>
+                <a href="https://www.airbnb.com/casa-da-avo" target="_blank">Link</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/melgaco-retreat.jpg" alt="Melgaço Countryside Retreat">
+                <h3>Melgaço Countryside Retreat</h3>
+                <p>A cozy retreat offering a blend of traditional and modern comforts, set in the countryside.</p>
+                <a href="https://www.airbnb.com/melgaco-retreat" target="_blank">Link</a>
+            </div>
+        </div>
+
+        <div class="lodging-category">
+            <h2>Monção - Hotels</h2>
+            <div class="lodging-item">
+                <img src="images/hotel-monterrei.jpg" alt="Hotel Monterrei">
+                <h3>Hotel Monterrei</h3>
+                <p>A comfortable hotel with modern amenities, located in the center of Monção, ideal for exploring the town and the surrounding region.</p>
+                <a href="https://www.hotelmonterrei.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/hotel-bb.jpg" alt="Hotel B&B Monção">
+                <h3>Hotel B&B Monção</h3>
+                <p>A budget-friendly option offering basic amenities and a convenient location for exploring Monção and the nearby areas.</p>
+                <a href="https://www.hotelbbmoncao.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/hotel-muralha.jpg" alt="Hotel Muralha">
+                <h3>Hotel Muralha</h3>
+                <p>A charming hotel located near the Monção Castle, offering comfortable rooms and a great location.</p>
+                <a href="https://www.hotelmuralha.com" target="_blank">Website</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/quinta-da-mata.jpg" alt="Quinta da Mata">
+                <h3>Quinta da Mata</h3>
+                <p>A beautiful rural property offering comfortable accommodations and a serene environment.</p>
+                <a href="https://www.quintadamata.com" target="_blank">Website</a>
+            </div>
+        </div>
+
+        <div class="lodging-category">
+            <h2>Monção - Airbnb Options</h2>
+            <div class="lodging-item">
+                <img src="images/casa-da-ponte.jpg" alt="Casa da Ponte">
+                <h3>Casa da Ponte</h3>
+                <p>A traditional Portuguese house with modern amenities, offering a comfortable stay with easy access to Monção.</p>
+                <a href="https://www.airbnb.com/casa-da-ponte" target="_blank">Link</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/villa-da-fraga.jpg" alt="Villa da Fraga">
+                <h3>Villa da Fraga</h3>
+                <p>A spacious villa with a private garden and pool, providing a luxurious and relaxing stay.</p>
+                <a href="https://www.airbnb.com/villa-da-fraga" target="_blank">Link</a>
+            </div>
+            <div class="lodging-item">
+                <img src="images/apartamento-monçao.jpg" alt="Apartamento em Monção">
+                <h3>Apartamento em Monção</h3>
+                <p>A modern and well-equipped apartment located in the heart of Monção, ideal for exploring the town.</p>
+                <a href="https://www.airbnb.com/apartamento-em-monçao" target="_blank">Link</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
