@@ -106,28 +106,29 @@ h6 {
 }
 /* <===================NAVBAR===================> */
 
-nav{
+/* General Navigation Styles */
+nav {
     height: 3vh;
     width: 100%;
     margin-bottom: 20vh;
 }
-label.logo{
+label.logo {
     font-size: 35px;
     line-height: 80px;
     padding: 0 0 0 30px;
     font-weight: bold;
 }
-nav ul{
+nav ul {
     float: right;
     margin-right: 20px;
     list-style: none;
 }
-nav ul li{
+nav ul li {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
-nav ul li a{
+nav ul li a {
     font-family: 'Quicksand', sans-serif;
     font-size: 17px;
     padding: 7px 13px;
@@ -135,11 +136,11 @@ nav ul li a{
     text-transform: uppercase;
     text-decoration: none;
 }
-a:hover{
+a:hover {
     color: orange;
     transition: .5s;
 }
-.checkbtn{
+.checkbtn {
     font-size: 30px;
     float: right;
     line-height: 80px;
@@ -147,25 +148,29 @@ a:hover{
     cursor: pointer;
     display: none;
 }
-#check{
+#check {
     display: none;
 }
-@media (max-width:1000px){
-    label.logo{
+
+/* Media Query for Medium Screens */
+@media (max-width: 1000px) {
+    label.logo {
         font-size: 20px;
     }
-    nav ul li a{
+    nav ul li a {
         font-size: 10px;
     }
-    html{
+    html {
         font-size: 10px;
     }
 }
-@media (max-width:570px){
-    .checkbtn{
+
+/* Media Query for Small Screens */
+@media (max-width: 570px) {
+    .checkbtn {
         display: block;
     }
-    ul{
+    ul {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -176,26 +181,23 @@ a:hover{
         text-align: center;
         transition: all .5s;
     }
-    nav ul li{
+    nav ul li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
-    nav li ul a{
+    nav li ul a {
         font-size: 20px;
     }
-    a:hover, a.active{
+    a:hover, a.active {
         background: none;
         color: grey;
     }
-    #check:checked ~ ul{
+    #check:checked ~ ul {
         left: 0;
     }
 }
-
-
-
-/* Dropdown styles */
+/* Dropdown Styles */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -207,6 +209,7 @@ a:hover{
     color: inherit;
 }
 
+/* Dropdown Menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -214,22 +217,48 @@ a:hover{
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    right: 0; /* Align dropdown to the right */
 }
 
+/* Style for Dropdown Items */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: right; /* Align text for RTL */
+    text-align: right; /* Align text for RTL (Right-To-Left) languages */
 }
 
+/* Dropdown Item Hover Style */
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
+/* Show Dropdown when Hovered */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Adjust Dropdown for Small Screens */
+@media (max-width: 570px) {
+    /* Ensure dropdown content stays within the screen on mobile */
+    .dropdown-content {
+        position: absolute;
+        width: 100%; /* Ensure the dropdown takes up the full width of the screen */
+        left: 0; /* Align to the left of the screen */
+        box-shadow: none; /* Remove the shadow for mobile */
+        border-top: 1px solid #ddd; /* Optional: add a border on top for separation */
+    }
+
+    .dropdown-content a {
+        padding: 15px; /* Adjust padding for better spacing */
+        text-align: center; /* Center-align text on mobile */
+    }
+
+    /* Ensure dropdown is fully visible on mobile */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 
@@ -465,7 +494,7 @@ a:hover{
 .hands{
     height: 120vh;
     width: 100%;
-    background-image: url('images/family_4.jpg');
+    background-image: url('images/family_2.jpg');
     background-size: cover;
     background-position-y: center;
     background-attachment: fixed;
