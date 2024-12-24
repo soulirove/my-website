@@ -105,130 +105,98 @@ h6 {
     top: 100vh;
 }
 /* <===================NAVBAR===================> */
-/* Default (Mobile-First) Styles */
+
+/* General Navigation Styles */
 nav {
     height: 3vh;
     width: 100%;
     margin-bottom: 20vh;
 }
-
 label.logo {
-    font-size: 20px;
+    font-size: 35px;
     line-height: 80px;
     padding: 0 0 0 30px;
     font-weight: bold;
 }
-
 nav ul {
+    float: right;
+    margin-right: 20px;
     list-style: none;
-    text-align: center; /* Center items on small screens */
-    padding: 0;
-    display: none; /* Hide the regular horizontal navigation by default */
 }
-
 nav ul li {
-    display: block;
-    line-height: 30px;
-    margin: 50px 0;
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
 }
-
 nav ul li a {
     font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
     text-decoration: none;
-    display: block;
 }
-
 a:hover {
     color: orange;
     transition: .5s;
 }
-
 .checkbtn {
     font-size: 30px;
     float: right;
     line-height: 80px;
     margin-right: 40px;
     cursor: pointer;
-    display: block; /* Always display the hamburger on all screens */
+    display: none;
 }
-
 #check {
     display: none;
 }
 
-ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    backdrop-filter: blur(5px);
-    top: 80px;
-    font-weight: bold;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-}
-
-#check:checked ~ ul {
-    left: 0;
-}
-
-/* Media Query for Medium Screens (Tablet and small desktop screens) */
-@media (min-width: 571px) and (max-width: 1000px) {
+/* Media Query for Medium Screens */
+@media (max-width: 1000px) {
     label.logo {
         font-size: 20px;
     }
-
     nav ul li a {
-        font-size: 14px;
+        font-size: 10px;
     }
-
     html {
-        font-size: 12px;
-    }
-
-    .checkbtn {
-        display: block; /* Keep hamburger menu on medium screens */
+        font-size: 10px;
     }
 }
 
-/* Media Query for Large Screens (Desktops and larger) */
-@media (min-width: 1001px) {
-    label.logo {
-        font-size: 35px;
+/* Media Query for Small Screens */
+@media (max-width: 570px) {
+    .checkbtn {
+        display: block;
     }
-
-    nav ul {
-        float: right;
-        margin-right: 20px;
-        display: none; /* Hide horizontal navigation on large screens */
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        top: 80px;
+        font-weight: bold;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
     }
-
     nav ul li {
-        display: inline-block;
-        line-height: 80px;
-        margin: 0 5px;
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
     }
-
-    nav ul li a {
-        font-size: 17px;
-        padding: 7px 13px;
+    nav li ul a {
+        font-size: 20px;
     }
-
-    .checkbtn {
-        display: block; /* Always show the hamburger on large screens */
+    a:hover, a.active {
+        background: none;
+        color: grey;
+    }
+    #check:checked ~ ul {
+        left: 0;
     }
 }
-
-/* Ensuring the "text" class is visible */
-.text {
-    display: block; /* Make sure the "text" class is visible */
-    text-align: left; /* Align text to the left on large screens */
-}
-
 /* Dropdown Styles */
 .dropdown {
     position: relative;
@@ -271,18 +239,15 @@ ul {
     display: block;
 }
 
-/* Ensure dropdown stays visible on click for mobile */
+/* Adjust Dropdown for Small Screens */
 @media (max-width: 570px) {
+    /* Ensure dropdown content stays within the screen on mobile */
     .dropdown-content {
-        display: none;
         position: absolute;
-        left: 0;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    #check:checked ~ .dropdown-content {
-        display: block;
+        width: 100%; /* Ensure the dropdown takes up the full width of the screen */
+        left: 0; /* Align to the left of the screen */
+        box-shadow: none; /* Remove the shadow for mobile */
+        border-top: 1px solid #ddd; /* Optional: add a border on top for separation */
     }
 
     .dropdown-content a {
@@ -295,6 +260,7 @@ ul {
         display: block;
     }
 }
+
 
 /* <===================HOME===================> */
 
@@ -309,30 +275,26 @@ ul {
     background-size: cover;
     background-position: center;
 }
-.home-img-sm {
+.home-img-sm{
     display: none;
     width: 100%;
     margin: 20px 0 0 0;
-    height: 50vh; /* Smaller size for mobile view */
+    height: 50vh;
 }
-
-#home-img-lg {
+#home-img-lg{
     display: block;
     height: 110vh;
     width: 50vw;
     background-position-x: -100px;
 }
-
-@media (max-width:1000px) {
-    .container-out {
+@media (max-width:1000px){
+    .container-out{
         flex-direction: column;
     }
-
-    .home-img-sm {
+    .home-img-sm{
         display: block;
     }
-
-    #home-img-lg {
+    #home-img-lg{
         display: none;
     }
 }
@@ -472,13 +434,12 @@ ul {
     justify-content: center;
     align-items: center;
 }
-.gallery-img {
+.gallery-img{
     width: 30vw;
     height: 30vw;
     margin: 10px;
     background-size: cover;
     background-position: center;
-    object-fit: cover; /* Ensure the aspect ratio is maintained */
 }
 .gallery-img:nth-child(1){
     background-image: url('images/story_1.jpeg');
@@ -531,21 +492,13 @@ ul {
 /* <===================HANDS===================> */
 
 .hands {
-    height: 120vh; /* Full height of the container */
+    height: 120vh; /* Height of the container */
     width: 100%;   /* Full width of the container */
     background-image: url('images/family_2.jpg');
-    background-size: cover;
-    background-position: center center; /* Default: Center the image */
+    background-size: cover; /* Make sure the image covers the entire container */
+    background-position: center center; /* Always center the image */
     background-attachment: fixed; /* Keep the image fixed while scrolling */
     background-repeat: no-repeat; /* Prevent the image from repeating */
-}
-
-@media (max-width: 768px) {
-    .hands {
-        background-size: contain; /* Adjust the image to fit within the screen */
-        background-attachment: scroll; /* Prevent issues with `fixed` on mobile */
-        background-position: center center; /* Ensure the image remains centered */
-    }
 }
 
 
