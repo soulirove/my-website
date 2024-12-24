@@ -239,15 +239,18 @@ a:hover {
     display: block;
 }
 
-/* Adjust Dropdown for Small Screens */
+/* Ensure dropdown stays visible on click for mobile */
 @media (max-width: 570px) {
-    /* Ensure dropdown content stays within the screen on mobile */
     .dropdown-content {
+        display: none;
         position: absolute;
-        width: 100%; /* Ensure the dropdown takes up the full width of the screen */
-        left: 0; /* Align to the left of the screen */
-        box-shadow: none; /* Remove the shadow for mobile */
-        border-top: 1px solid #ddd; /* Optional: add a border on top for separation */
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    #check:checked ~ .dropdown-content {
+        display: block;
     }
 
     .dropdown-content a {
@@ -275,26 +278,30 @@ a:hover {
     background-size: cover;
     background-position: center;
 }
-.home-img-sm{
+.home-img-sm {
     display: none;
     width: 100%;
     margin: 20px 0 0 0;
-    height: 50vh;
+    height: 50vh; /* Smaller size for mobile view */
 }
-#home-img-lg{
+
+#home-img-lg {
     display: block;
     height: 110vh;
     width: 50vw;
     background-position-x: -100px;
 }
-@media (max-width:1000px){
-    .container-out{
+
+@media (max-width:1000px) {
+    .container-out {
         flex-direction: column;
     }
-    .home-img-sm{
+
+    .home-img-sm {
         display: block;
     }
-    #home-img-lg{
+
+    #home-img-lg {
         display: none;
     }
 }
@@ -434,12 +441,13 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
-.gallery-img{
+.gallery-img {
     width: 30vw;
     height: 30vw;
     margin: 10px;
     background-size: cover;
     background-position: center;
+    object-fit: cover; /* Ensure the aspect ratio is maintained */
 }
 .gallery-img:nth-child(1){
     background-image: url('images/story_1.jpeg');
@@ -492,13 +500,21 @@ a:hover {
 /* <===================HANDS===================> */
 
 .hands {
-    height: 120vh; /* Height of the container */
+    height: 120vh; /* Full height of the container */
     width: 100%;   /* Full width of the container */
     background-image: url('images/family_2.jpg');
-    background-size: cover; /* Make sure the image covers the entire container */
-    background-position: center center; /* Always center the image */
+    background-size: cover;
+    background-position: center center; /* Default: Center the image */
     background-attachment: fixed; /* Keep the image fixed while scrolling */
     background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+@media (max-width: 768px) {
+    .hands {
+        background-size: contain; /* Adjust the image to fit within the screen */
+        background-attachment: scroll; /* Prevent issues with `fixed` on mobile */
+        background-position: center center; /* Ensure the image remains centered */
+    }
 }
 
 
